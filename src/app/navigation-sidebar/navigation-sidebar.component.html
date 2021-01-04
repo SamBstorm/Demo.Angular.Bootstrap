@@ -1,0 +1,8 @@
+<nav class="nav flex-column">
+    <ng-container *ngFor="let listItem of navList">
+        <app-navigation-item *ngIf="!(listItem.children)" [listItem]="listItem">
+        </app-navigation-item>
+        <app-navigation-dropdown *ngIf="listItem.children" [listItem]="listItem">
+        </app-navigation-dropdown>
+    </ng-container>
+</nav>

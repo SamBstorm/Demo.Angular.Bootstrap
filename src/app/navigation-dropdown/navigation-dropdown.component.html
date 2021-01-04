@@ -1,0 +1,10 @@
+<div [ngClass]="{'dropdown': true}">
+<a [ngClass]="{'nav-link': true, 'dropdown-toggle': true}" [routerLink]="listItem.link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    {{listItem.name}}
+    <div [ngClass]="{'dropdown-menu': true}">
+        <a *ngFor="let dropdownItem of listItem.children" [ngClass]="{'dropdown-item': true}" [routerLink]="dropdownItem.link">
+            {{dropdownItem.name}}
+        </a>
+    </div>
+</a>
+</div>
